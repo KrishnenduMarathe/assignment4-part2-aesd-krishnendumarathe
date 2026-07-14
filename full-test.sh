@@ -20,6 +20,9 @@ echo "Running test with user $(whoami)"
 
 set +e
 
+# Buildroot refusing to compile on docker
+export FORCE_UNSAFE_CONFIGURE=1
+
 # If there's a configuration for the assignment number, use this to look for
 # additional tests
 if [ -f conf/assignment.txt ]; then
